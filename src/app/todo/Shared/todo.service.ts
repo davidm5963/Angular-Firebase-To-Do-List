@@ -19,8 +19,18 @@ export class TodoService {
   {
     this.toDoList.push({
       title: title,
-      isChecked: false;
+      isChecked: false
     }
     );
+  }
+
+  checkOrUncheckItem($key: string, flag: boolean)
+  {
+    this.toDoList.update($key, { isChecked: flag });
+  }
+
+  deleteItem($key: string)
+  {
+    this.toDoList.remove($key);
   }
 }
